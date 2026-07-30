@@ -1,22 +1,24 @@
-import { useState } from "react";
 import { ToastContainer } from "react-toastify";
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/home/Home.jsx";
-import Navbar from "./components/Navbar/Navbar.jsx";
+import "react-toastify/dist/ReactToastify.css";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    <>
-      <ToastContainer />
-      <div className="app">
-        <Navbar />
-        {/* nav component paste */}
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-        </Routes>
-      </div>
-      {/* footer */}
-    </>
+    <div className="app bg-slate-50 text-slate-900 min-h-screen">
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <AppRoutes />
+    </div>
   );
 }
 
